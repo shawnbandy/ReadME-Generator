@@ -1,13 +1,13 @@
 #A
 
 Table of Contents
-        [Description](#desc)
-        [Installation](#install)
-        [Usage] (#usage)
-        [License] (#lic)
-        [ContributingGuidelines] (#CG)
-        [TestInstructions] (#TI)
-        [Questions] (#Q)
+[Description](#desc)
+[Installation](#install)
+[Usage](#usage)
+[License](#lic)
+[ContributingGuidelines](#CG)
+[TestInstructions](#TI)
+[Questions](#Q)
 
 <a id="desc"></a>
 ### Description
@@ -38,5 +38,5 @@ F
 Link to GitHub Profile: https://github.com/G
 
 How to contact me:
-    Email: H
+Email: H
     
