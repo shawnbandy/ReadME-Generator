@@ -1,6 +1,7 @@
-#A
+#B
+<img src=(./assets/licenseImg/dog.png)>
 
-### Table of Contents
+Table of Contents
 [Description](#desc)
 
 [Installation](#install)
@@ -15,18 +16,17 @@
 
 [Questions](#Q)
 
-
 <a id="desc"></a>
 ### Description
-B
+C
 
 <a name="install"></a>
 ### Installation
-C
+D
 
 <a name="usage"></a>
 ### Usage
-D
+E
 
 <a name="lic"></a>
 ### License
@@ -34,16 +34,15 @@ DogLicense
 
 <a name="CG"></a>
 ### ContributingGuidelines
-E
+F
 
 <a name="TI"></a>
 ### TestInstructions
-F
+G
 
 <a name="Q"></a>
 ### Questions
-Link to GitHub Profile: https://github.com/G
+Link to GitHub Profile: https://github.com/H
 
 How to contact me:
-Email: H
-    
+Email: I

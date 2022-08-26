@@ -1,49 +1,56 @@
 const fs = require('fs');
 const inq = require('inquirer');
 
-const generateREADME = ({title, desc, install, usage, license, cont, testInst, username, email}) =>
-    `#${title}
+const generateREADME = ({title, desc, install, usage, license, cont, testInst, username, email}, img) =>
+`#${title}
+<img src=${img}>
 
-    Table of Contents
-        [Description](#desc)
-        [Installation](#install)
-        [Usage] (#usage)
-        [License] (#lic)
-        [ContributingGuidelines] (#CG)
-        [TestInstructions] (#TI)
-        [Questions] (#Q)
+Table of Contents
+[Description](#desc)
 
-    <a id="desc"></a>
-    ### Description
-    ${desc}
+[Installation](#install)
 
-    <a name="install"></a>
-    ### Installation
-    ${install}
+[Usage](#usage)
 
-    <a name="usage"></a>
-    ### Usage
-    ${usage}
+[License](#lic)
 
-    <a name="lic"></a>
-    ### License
-    ${license}
+[ContributingGuidelines](#CG)
 
-    <a name="CG"></a>
-    ### ContributingGuidelines
-    ${cont}
+[TestInstructions](#TI)
 
-    <a name="TI"></a>
-    ### TestInstructions
-    ${testInst}
+[Questions](#Q)
 
-    <a name="Q"></a>
-    ### Questions
-    Link to GitHub Profile: https://github.com/${username}
+<a id="desc"></a>
+### Description
+${desc}
 
-    How to contact me:
-        Email: ${email}
-    `;
+<a name="install"></a>
+### Installation
+${install}
+
+<a name="usage"></a>
+### Usage
+${usage}
+
+<a name="lic"></a>
+### License
+${license}
+
+<a name="CG"></a>
+### ContributingGuidelines
+${cont}
+
+<a name="TI"></a>
+### TestInstructions
+${testInst}
+
+<a name="Q"></a>
+### Questions
+Link to GitHub Profile: https://github.com/${username}
+
+How to contact me:
+Email: ${email}
+`;
 
 
 inq.prompt([
@@ -112,24 +119,30 @@ inq.prompt([
     .then(function(data){
         console.log(data);
 
-        const readMeContent = generateREADME(data)
-
         const { welcome, title, desc, install, usage, license, cont, testInst, username, email } = data
 
-        let licenseImg = "";
+        let licenseImg;
         switch (license){
             case "DogLicense" :
                 licenseImg = "(./assets/licenseImg/dog.png)"
+                break;
+            case "CatLicense" :
+                licenseImg = "(./assets/licenseImg/cat.png)"
+                break;
+            case "BearLicense" :
+                licenseImg = "(./assets/licenseImg/bear.png)"
+                break;
+            case "JackRabbitLicense" :
+                licenseImg = "(./assets/licenseImg/rabit.png)"
                 break;
             default :
                 licenseImg = "(./assets/licenseImg/dog.png)"
                 break;
         }
 
+        const readMeContent = generateREADME(data, licenseImg)
 
-
-
-        const titleElement = title + ".txt"
+        const titleElement = title 
         
         fs.writeFile(titleElement + '.md', readMeContent, (err) =>
             err ? console.error(err) : console.log('Success!')
@@ -138,6 +151,5 @@ inq.prompt([
 
     });
     
-    //*make a function that appends different parts of the readme file
 
     
