@@ -1,13 +1,20 @@
 #A
 
-Table of Contents
+### Table of Contents
 [Description](#desc)
+
 [Installation](#install)
+
 [Usage](#usage)
+
 [License](#lic)
+
 [ContributingGuidelines](#CG)
+
 [TestInstructions](#TI)
+
 [Questions](#Q)
+
 
 <a id="desc"></a>
 ### Description
