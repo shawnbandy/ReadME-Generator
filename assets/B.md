@@ -1,7 +1,8 @@
 #B
-<img src=./assets/licenseImg/dog.png>
+<img src=/assets/licenseImg/dog.png>
 
 Table of Contents
+
 [Description](#desc)
 
 [Installation](#install)
