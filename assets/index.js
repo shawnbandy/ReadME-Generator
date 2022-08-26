@@ -1,44 +1,44 @@
 const fs = require('fs');
 const inq = require('inquirer');
 
-const generateREADME = ({desc, install, usage, license, cont, testInst, username, email}) =>
-    `#README
+const generateREADME = ({title, desc, install, usage, license, cont, testInst, username, email}) =>
+    `#${title}
 
     Table of Contents
-        [ Description ](#desc)
-        [ Installation ](#install)
-        [ Usage ] (#usage)
-        [ License ] (#lic)
-        [ ContributingGuidelines ] (#CG)
-        [ TestInstructions ] (#TI)
-        [ Questions ] (#Q)
+        [Description](#desc)
+        [Installation](#install)
+        [Usage] (#usage)
+        [License] (#lic)
+        [ContributingGuidelines] (#CG)
+        [TestInstructions] (#TI)
+        [Questions] (#Q)
 
-    <a name="desc"></a>
-    #Description
+    <a id="desc"></a>
+    ### Description
     ${desc}
 
     <a name="install"></a>
-    #Installation
+    ### Installation
     ${install}
 
     <a name="usage"></a>
-    #Usage
+    ### Usage
     ${usage}
 
     <a name="lic"></a>
-    #License
+    ### License
     ${license}
 
     <a name="CG"></a>
-    #ContributingGuidelines
+    ### ContributingGuidelines
     ${cont}
 
     <a name="TI"></a>
-    #TestInstructions
+    ### TestInstructions
     ${testInst}
 
     <a name="Q"></a>
-    #Questions
+    ### Questions
     Link to GitHub Profile: https://github.com/${username}
 
     How to contact me:
