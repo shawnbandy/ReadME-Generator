@@ -2,10 +2,12 @@ const fs = require('fs');
 const inq = require('inquirer');
 
 const generateREADME = ({title, desc, install, usage, license, cont, testInst, username, email}, img) =>
-`#${title}
+`# ${title}
+
 <img src=${img}>
 
-Table of Contents
+## Table of Contents
+
 
 [Description](#desc)
 
@@ -125,19 +127,19 @@ inq.prompt([
         let licenseImg;
         switch (license){
             case "DogLicense" :
-                licenseImg = "(./assets/licenseImg/dog.png)"
+                licenseImg = "/assets/licenseImg/dog.png"
                 break;
             case "CatLicense" :
-                licenseImg = "(./assets/licenseImg/cat.png)"
+                licenseImg = "/assets/licenseImg/cat.png"
                 break;
             case "BearLicense" :
-                licenseImg = "(./assets/licenseImg/bear.png)"
+                licenseImg = "/assets/licenseImg/bear.png"
                 break;
             case "JackRabbitLicense" :
-                licenseImg = "(./assets/licenseImg/rabit.png)"
+                licenseImg = "/assets/licenseImg/rabit.png"
                 break;
             default :
-                licenseImg = "(./assets/licenseImg/dog.png)"
+                licenseImg = "/assets/licenseImg/dog.png"
                 break;
         }
 
