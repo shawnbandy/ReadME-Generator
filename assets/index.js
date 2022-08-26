@@ -5,32 +5,39 @@ const generateREADME = ({desc, install, usage, license, cont, testInst, username
     `#README
 
     Table of Contents
-        #Description
-        #Installation
-        #Usage
-        #License
-        #ContributingGuidelines
-        #TestInstructions
-        #Questions
+        [ Description ](#desc)
+        [ Installation ](#install)
+        [ Usage ] (#usage)
+        [ License ] (#lic)
+        [ ContributingGuidelines ] (#CG)
+        [ TestInstructions ] (#TI)
+        [ Questions ] (#Q)
 
+    <a name="desc"></a>
     #Description
     ${desc}
 
+    <a name="install"></a>
     #Installation
     ${install}
 
+    <a name="usage"></a>
     #Usage
     ${usage}
 
+    <a name="lic"></a>
     #License
     ${license}
 
+    <a name="CG"></a>
     #ContributingGuidelines
     ${cont}
 
+    <a name="TI"></a>
     #TestInstructions
     ${testInst}
 
+    <a name="Q"></a>
     #Questions
     Link to GitHub Profile: https://github.com/${username}
 
@@ -108,6 +115,19 @@ inq.prompt([
         const readMeContent = generateREADME(data)
 
         const { welcome, title, desc, install, usage, license, cont, testInst, username, email } = data
+
+        let licenseImg = "";
+        switch (license){
+            case "DogLicense" :
+                licenseImg = "(./assets/licenseImg/dog.png)"
+                break;
+            default :
+                licenseImg = "(./assets/licenseImg/dog.png)"
+                break;
+        }
+
+
+
 
         const titleElement = title + ".txt"
         
