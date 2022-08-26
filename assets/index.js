@@ -1,10 +1,10 @@
 const fs = require('fs');
 const inq = require('inquirer');
 
-const generateREADME = ({title, desc, install, usage, license, cont, testInst, username, email}, img) =>
+const generateREADME = ({title, desc, install, usage, cont, testInst, username, email}, license, licimg) =>
 `# ${title}
 
-<img src=${img}>
+<img src=${licimg}>
 
 ## Table of Contents
 
@@ -52,6 +52,7 @@ ${testInst}
 Link to GitHub Profile: https://github.com/${username}
 
 How to contact me:
+
 Email: ${email}
 `;
 
@@ -122,32 +123,40 @@ inq.prompt([
     .then(function(data){
         console.log(data);
 
-        const { welcome, title, desc, install, usage, license, cont, testInst, username, email } = data
+        const { welcome, title, desc, install, usage, cont, testInst, username, email } = data
+        let { license } = data;
 
         let licenseImg;
         switch (license){
             case "DogLicense" :
                 licenseImg = "/assets/licenseImg/dog.png"
+                license += " , this license belongs to our canine friends."
                 break;
             case "CatLicense" :
                 licenseImg = "/assets/licenseImg/cat.png"
+                license += " , this license belongs to our feline friends."
                 break;
             case "BearLicense" :
                 licenseImg = "/assets/licenseImg/bear.png"
+                license += " , this license belongs to Yogi and company."
                 break;
             case "JackRabbitLicense" :
                 licenseImg = "/assets/licenseImg/rabit.png"
+                license += " , this license belongs to our hopping friends."
                 break;
             default :
                 licenseImg = "/assets/licenseImg/dog.png"
+                license += " , this license belongs to our canine friends. This was chosen for the default licensing as none was selected."
                 break;
         }
 
-        const readMeContent = generateREADME(data, licenseImg)
+        const usageImg = "/assets/licenseImg/"
+
+        const readMeContent = generateREADME(data, license, licenseImg)
 
         const titleElement = title 
         
-        fs.writeFile(titleElement + '.md', readMeContent, (err) =>
+        fs.writeFile("./Result/" + titleElement + '.md', readMeContent, (err) =>
             err ? console.error(err) : console.log('Success!')
         );
         
